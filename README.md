@@ -25,7 +25,7 @@ We evaluated NewHope on [HumanEval](https://github.com/openai/human-eval) using 
 
 # Model Weights
 
-We have open-sourced the model weights [NewHope](https://huggingface.co/SLAM-group).
+We have open-sourced the model weights [NewHope](https://huggingface.co/SLAM-group/NewHope).
 
 We are uploading the model weights. The weights will be available in a few hours.
 
@@ -37,9 +37,9 @@ To load the NewHope model using Transformers, use the following code:
 import torch
 from transformers import LlamaTokenizer, LlamaForCausalLM
 
-base_model = ""
+base_model = "SLAM-group/NewHope"
 tokenizer = LlamaTokenizer.from_pretrained(base_model)
-model = LlamaForCausalLM.from_pretrained(args.base_model, torch_dtype=torch.float16, device_map="auto")
+model = LlamaForCausalLM.from_pretrained(base_model, torch_dtype=torch.float16, device_map="auto")
 # model.config.use_cache is default to `False`. For inference: `model.config.use_cache = True`
 ```
 **Note:** At least Huggingface Transformers **4.31.0** is required to load this model!
@@ -85,7 +85,7 @@ prompt = f"<s> ### Instruction:\nComplete the given function below:\n\n{example_
 
 To reproduce the results on HumanEval, use the following script:
 ```
-python complete_newhope.py --base_model llama2 --output_dir output --n_gpu 8
+python complete.py --base_model SLAM-group/NewHope --output_dir output --n_gpu 8
 ```
 The above script will generate `samples.jsonl` in `output_dir`, which can be directly evaluated by HumanEval. [Evaluation procedure](https://github.com/openai/human-eval). We conducted the experiment with `fp16` on 8xA800, 80GB GPUs, reaching `66.5%` on Pass@1 (v.s. GPT4 `67.0%`).
 
