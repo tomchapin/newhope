@@ -94,7 +94,7 @@ The above script will generate `samples.jsonl` in `output_dir`, which can be dir
 ```
 @misc{2023newhope,
     title={NewHope: Harnessing 99% of GPT-4's Programming Capabilities},
-    author={NewHope team},
+    author={Wanyun Cui and Qianle Wang},
     howpublished = https://github.com/SLAM-group/newhope,
     year={2023}
 }
