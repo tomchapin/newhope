@@ -25,9 +25,9 @@ We evaluated NewHope on [HumanEval](https://github.com/openai/human-eval) using 
 
 # Model Weights
 
-We have open-sourced the model weights [NewHope](https://huggingface.co/SLAM-group).
+We have open-sourced the [model weights](https://huggingface.co/SLAM-group/NewHope).
 
-We are uploading the model weights. The weights will be available in a few hours.
+_We are uploading the model weights. The weights will be available in a few hours._
 
 
 # Usage
@@ -37,7 +37,7 @@ To load the NewHope model using Transformers, use the following code:
 import torch
 from transformers import LlamaTokenizer, LlamaForCausalLM
 
-base_model = ""
+base_model = "SLAM-group/NewHope"
 tokenizer = LlamaTokenizer.from_pretrained(base_model)
 model = LlamaForCausalLM.from_pretrained(args.base_model, torch_dtype=torch.float16, device_map="auto")
 # model.config.use_cache is default to `False`. For inference: `model.config.use_cache = True`
