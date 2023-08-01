@@ -2,7 +2,8 @@
 
 We introduce NewHope, a fine-tuned chat model based on llama-2-13b, aiming to provide a strong coding capability. NewHope handle different languages including Python, C++, Java, JavaScript, Go, and more. Preliminary evaluation on HumanEval shows that **NewHope possesses 99% of GPT-4's programming capabilities**.
 
-**Contact**: SLAM (<ins>S</ins>UFE <ins>L</ins>arge <ins>A</ins>I <ins>M</ins>odel) group, cui.wanyun@sufe.edu.cn 
+**Contact**: SLAM (<ins>S</ins>UFE <ins>L</ins>arge <ins>A</ins>I <ins>M</ins>odel) is a research group at Shanghai University of Finance and Economics. 
+cui.wanyun@sufe.edu.cn 
 
 **TODO**: We will release more evaluatation results and training details later.
 
