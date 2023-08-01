@@ -25,7 +25,9 @@ We evaluated NewHope on [HumanEval](https://github.com/openai/human-eval) using 
 
 # Model Weights
 
-We have open-sourced the model weights [NewHope](https://huggingface.co/).
+We have open-sourced the model weights [NewHope](https://huggingface.co/SLAM-group).
+
+We are uploading the model weights. The weights will be available in a few hours.
 
 
 # Usage
