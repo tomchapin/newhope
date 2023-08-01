@@ -1,6 +1,6 @@
 # NewHope: Harnessing 99% of GPT-4's Programming Capabilities
 
-We introduce NewHope, a fine-tuned chat model based on llama-2-13b, aiming to provide a strong coding capability. NewHope handle different languages including Python, C++, Java, JavaScript, Go, and more. Preliminary evaluation on HumanEval shows that **NewHope possesses 99% of GPT-4's programming capabilities**.
+We introduce NewHope, a chat model based on llama-2-13b, aiming to provide a strong coding capability. NewHope handle different languages including Python, C++, Java, JavaScript, Go, and more. Preliminary evaluation on HumanEval shows that **NewHope possesses 99% of GPT-4's programming capabilities**.
 
 **Contact**: SLAM (<ins>S</ins>UFE <ins>L</ins>arge <ins>A</ins>I <ins>M</ins>odel) is a research group at Shanghai University of Finance and Economics. 
 cui.wanyun@sufe.edu.cn 
@@ -25,6 +25,7 @@ We evaluated NewHope on [HumanEval](https://github.com/openai/human-eval) using 
 
 # Model Weights
 
+
 We have open-sourced the [model weights](https://huggingface.co/SLAM-group/NewHope).
 
 _We are uploading the model weights. The weights will be available in a few hours._
@@ -39,10 +40,10 @@ from transformers import LlamaTokenizer, LlamaForCausalLM
 
 base_model = "SLAM-group/NewHope"
 tokenizer = LlamaTokenizer.from_pretrained(base_model)
-model = LlamaForCausalLM.from_pretrained(args.base_model, torch_dtype=torch.float16, device_map="auto")
+model = LlamaForCausalLM.from_pretrained(base_model, torch_dtype=torch.float16, device_map="auto")
 # model.config.use_cache is default to `False`. For inference: `model.config.use_cache = True`
 ```
-**Note:** At least Huggingface Transformers **4.31.0** is required to load this model!
+**Note:** At least Huggingface Transformers **4.31.0** is required to load this model.
 
 You can ask NewHope to generate code with instructions. We provide a simple example of how NewHope model generates code with the specific prompt:
 ```
@@ -85,7 +86,7 @@ prompt = f"<s> ### Instruction:\nComplete the given function below:\n\n{example_
 
 To reproduce the results on HumanEval, use the following script:
 ```
-python complete_newhope.py --base_model llama2 --output_dir output --n_gpu 8
+python complete.py --base_model SLAM-group/NewHope --output_dir output --n_gpu 8
 ```
 The above script will generate `samples.jsonl` in `output_dir`, which can be directly evaluated by HumanEval. [Evaluation procedure](https://github.com/openai/human-eval). We conducted the experiment with `fp16` on 8xA800, 80GB GPUs, reaching `66.5%` on Pass@1 (v.s. GPT4 `67.0%`).
 
