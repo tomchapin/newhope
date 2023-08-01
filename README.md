@@ -1,6 +1,6 @@
 # NewHope: Harnessing 99% of GPT-4's Programming Capabilities
 
-We introduce NewHope, a fine-tuned chat model based on llama-2-13b, aiming to provide a strong coding capability. NewHope handle different languages including Python, C++, Java, JavaScript, Go, and more. Preliminary evaluation on HumanEval shows that **NewHope possesses 99% of GPT-4's programming capabilities**.
+We introduce NewHope, a chat model based on llama-2-13b, aiming to provide a strong coding capability. NewHope handle different languages including Python, C++, Java, JavaScript, Go, and more. Preliminary evaluation on HumanEval shows that **NewHope possesses 99% of GPT-4's programming capabilities**.
 
 **Contact**: SLAM (<ins>S</ins>UFE <ins>L</ins>arge <ins>A</ins>I <ins>M</ins>odel) is a research group at Shanghai University of Finance and Economics. 
 cui.wanyun@sufe.edu.cn 
@@ -27,7 +27,7 @@ We evaluated NewHope on [HumanEval](https://github.com/openai/human-eval) using 
 
 We have open-sourced the model weights [NewHope](https://huggingface.co/SLAM-group/NewHope).
 
-We are uploading the model weights. The weights will be available in a few hours.
+_We are uploading the model weights. The weights will be available in a few hours._
 
 
 # Usage
@@ -42,7 +42,7 @@ tokenizer = LlamaTokenizer.from_pretrained(base_model)
 model = LlamaForCausalLM.from_pretrained(base_model, torch_dtype=torch.float16, device_map="auto")
 # model.config.use_cache is default to `False`. For inference: `model.config.use_cache = True`
 ```
-**Note:** At least Huggingface Transformers **4.31.0** is required to load this model!
+**Note:** At least Huggingface Transformers **4.31.0** is required to load this model.
 
 You can ask NewHope to generate code with instructions. We provide a simple example of how NewHope model generates code with the specific prompt:
 ```
